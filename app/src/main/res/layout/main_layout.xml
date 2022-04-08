@@ -296,5 +296,24 @@
           android:textSize="12sp"
           />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        >
+
+      <Button
+          android:layout_width="0dp"
+          android:layout_height="50dp"
+          android:layout_weight="1"
+          android:onClick="phoneCallTest2"
+          android:text="Phone Call Test 2"
+          android:textAllCaps="false"
+          android:textSize="12sp"
+          />
+
+    </LinearLayout>
   </LinearLayout>
 </ScrollView>

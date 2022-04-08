@@ -23,7 +23,7 @@ import com.ubtrobot.transport.message.CallException;
 import java.util.List;
 
 /**
- * PhoneCallApi usage
+ * PhoneCallApi usage for inland version
  */
 public class PhoneCallApiActivity extends Activity implements CallStateListener,IPhoneCallListener {
     private static final String TAG = DemoApp.DEBUG_TAG;

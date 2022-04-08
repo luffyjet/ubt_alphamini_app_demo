@@ -111,4 +111,8 @@ public class MainActivity extends Activity {
     public void BuiltInSkillTest(View view) {
         startActivity(new Intent(this, BuiltInSkillCallTestActivity.class));
     }
+
+    public void phoneCallTest2(View view) {
+        startActivity(new Intent(this, PhoneCallApi2Activity.class));
+    }
 }

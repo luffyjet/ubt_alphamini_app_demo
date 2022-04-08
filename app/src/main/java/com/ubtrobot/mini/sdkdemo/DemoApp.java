@@ -2,6 +2,7 @@ package com.ubtrobot.mini.sdkdemo;
 
 import android.app.Application;
 
+import com.ubtech.utilcode.utils.Utils;
 import com.ubtrobot.mini.SDKInit;
 import com.ubtrobot.mini.properties.sdk.Path;
 import com.ubtrobot.mini.properties.sdk.PropertiesApi;
@@ -15,6 +16,7 @@ public class DemoApp extends Application {
         super.onCreate();
         PropertiesApi.setRootPath(Path.DIR_MINI_FILES_SDCARD_ROOT);
         SDKInit.initialize(this);
+        Utils.init(this);
     }
 
 //    @Override

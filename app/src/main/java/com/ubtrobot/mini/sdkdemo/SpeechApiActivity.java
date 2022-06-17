@@ -185,6 +185,7 @@ public class SpeechApiActivity extends Activity {
     }
 
     public void startInternalAsr(View view) {
+        Log.i(TAG, "startInternalAsr: starting asr ...");
         AsrHelper.get().startSpeechRecognise(10 * 1000, new AsrHelper.AsrCallback() {
             @Override
             public void onAsr(String text) {

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
-import com.ubtrobot.mini.pkgservice.ApkInstaller;
+import com.ubtrobot.mini.sdkdemo.util.ApkInstaller2;
 
 public class ApkSilentInstallerApiActivity extends Activity {
 
@@ -17,7 +17,7 @@ public class ApkSilentInstallerApiActivity extends Activity {
   }
 
   public void installApk(View view) {
-    ApkInstaller.get().installApk("/sdcard/xxxx.apk", new ApkInstaller.Callback() {
+    ApkInstaller2.get().installApk("/sdcard/xxx.apk", new ApkInstaller2.Callback() {
       @Override public void onSuccess() {
         Log.d(TAG, "install success.");
       }
@@ -29,7 +29,7 @@ public class ApkSilentInstallerApiActivity extends Activity {
   }
 
   public void uninstallApk(View view) {
-    ApkInstaller.get().uninstallApk("com.xxx.xxx", new ApkInstaller.Callback() {
+    ApkInstaller2.get().uninstallApk("com.xxx.xxx", new ApkInstaller2.Callback() {
       @Override public void onSuccess() {
         Log.d(TAG, "uninstall success.");
       }

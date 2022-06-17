@@ -57,6 +57,22 @@
         android:textAllCaps="false"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startInternalAsr"
+        android:text="启动内置Asr"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="stopInternalAsr"
+        android:text="停止内置Asr"
+        android:textAllCaps="false"
+        />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

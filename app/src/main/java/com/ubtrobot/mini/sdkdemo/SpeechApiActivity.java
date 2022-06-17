@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 
+import com.ubtrobot.mini.asrlib.AsrHelper;
 import com.ubtrobot.speech.SpeechApi;
 import com.ubtrobot.speech.parcelable.ASRState;
 import com.ubtrobot.speech.parcelable.InitResult;
@@ -17,6 +18,10 @@ import com.ubtrobot.speech.receivers.WakeupAngelReceiver;
 import com.ubtrobot.speech.receivers.WakeupReceiver;
 
 import com.ubtrobot.teach.receivers.WakeupAngleReceiver;
+import com.ubtrobot.transport.message.CallException;
+import com.ubtrobot.transport.message.Request;
+import com.ubtrobot.transport.message.Response;
+import com.ubtrobot.transport.message.StickyResponseCallback;
 
 /**
  * SpeechApi的测试方法
@@ -177,5 +182,39 @@ public class SpeechApiActivity extends Activity {
     public void oUnsubscribeEvent(View view) {
         Log.i(TAG, "oUnsubscribeEvent 取消事件订阅");
         speechApi.oUnsubscribeEvent(oWakeupReceiver);
+    }
+
+    public void startInternalAsr(View view) {
+        AsrHelper.get().startSpeechRecognise(10 * 1000, new AsrHelper.AsrCallback() {
+            @Override
+            public void onAsr(String text) {
+                Log.i("startInternalAsr", "onAsr: "+text);
+            }
+
+            @Override
+            public void onSuccess() {
+                Log.i("startInternalAsr", "onSuccess: ");
+            }
+
+            @Override
+            public void onFailure(CallException e) {
+                Log.e("startInternalAsr", "onFailure: "+e.getMessage(), e);
+            }
+        });
+    }
+
+    public void stopInternalAsr(View view) {
+        AsrHelper.get().stopSpeechRecognise(new AsrHelper.Callback() {
+
+            @Override
+            public void onSuccess() {
+                Log.i("stopInternalAsr", "onSuccess: ");
+            }
+
+            @Override
+            public void onFailure(CallException e) {
+                Log.e("stopInternalAsr", "onFailure: "+e.getMessage(), e);
+            }
+        });
     }
 }

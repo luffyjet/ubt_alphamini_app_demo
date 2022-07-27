@@ -115,4 +115,8 @@ public class MainActivity extends Activity {
     public void phoneCallTest2(View view) {
         startActivity(new Intent(this, PhoneCallApi2Activity.class));
     }
+
+    public void smallAction(View view) {
+        startActivity(new Intent(this, SmallActionActivity.class));
+    }
 }

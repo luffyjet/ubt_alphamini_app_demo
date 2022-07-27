@@ -103,6 +103,10 @@
     <activity android:name=".BuiltInSkillCallTestActivity"
         android:theme="@style/AppTheme"/>
 
+      <activity
+          android:name=".SmallActionActivity"
+          android:theme="@style/AppTheme"/>
+
     <service android:name=".DemoSkill"
         android:exported="true">
       <meta-data android:name="master.skill" android:resource="@xml/demo_skill_path" />

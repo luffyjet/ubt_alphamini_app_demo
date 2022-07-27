@@ -31,4 +31,19 @@
       android:textAllCaps="false"
       />
 
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="stopSmallAction"
+      android:text="stopSmallAction"
+      android:textAllCaps="false"
+      />
+
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="startSmallAction"
+      android:text="startSmallAction"
+      android:textAllCaps="false"
+      />
 </LinearLayout>

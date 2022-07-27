@@ -6,8 +6,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.ubtrobot.mini.sdkdemo.api.SmallActionExtApi;
 import com.ubtrobot.small.action.SmallAction;
 import com.ubtrobot.small.action.SmallActionApi;
+import com.ubtrobot.transport.message.CallException;
+import com.ubtrobot.transport.message.Request;
+import com.ubtrobot.transport.message.Response;
+import com.ubtrobot.transport.message.ResponseCallback;
 
 import java.util.List;
 
@@ -49,4 +54,31 @@ public class SmallActionActivity extends AppCompatActivity {
         }
     }
 
+    public void stopSmallAction(View view) {
+        SmallActionExtApi.get().stop(new ResponseCallback() {
+            @Override
+            public void onResponse(Request request, Response response) {
+                Log.d(TAG,"stopSmallAction 接口调用成功！");
+            }
+
+            @Override
+            public void onFailure(Request request, CallException e) {
+                Log.e(TAG,"stopSmallAction err！",e );
+            }
+        });
+    }
+
+    public void startSmallAction(View view) {
+        SmallActionExtApi.get().start(new ResponseCallback() {
+            @Override
+            public void onResponse(Request request, Response response) {
+                Log.d(TAG,"startSmallAction 接口调用成功！");
+            }
+
+            @Override
+            public void onFailure(Request request, CallException e) {
+                Log.e(TAG,"startSmallAction err！", e);
+            }
+        });
+    }
 }
